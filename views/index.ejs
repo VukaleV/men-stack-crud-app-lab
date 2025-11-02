@@ -1,4 +1,20 @@
-<<%- include('partials/header') %>
+<%- include('partials/header') %>
 
-<h1>Welcome to Food App!</h1>
-<p>This is the home page.</p>
+<h1>Food List</h1>
+
+<ul>
+  <% if (foods && foods.length > 0) { %>
+    <% foods.forEach(food => { %>
+      <li>
+        <strong><%= food.name %></strong> - <%= food.description %> - <%= food.calories %> cal
+        <a href="/foods/<%= food._id %>">View</a>
+        <a href="/foods/<%= food._id %>/edit">Edit</a>
+        <form action="/foods/<%= food._id %>?_method=DELETE" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  <% } else { %>
+    <li>No foods yet</li>
+  <% } %>
+</ul>

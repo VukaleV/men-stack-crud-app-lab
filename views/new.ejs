@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<h1>Add New Food</h1>
+
+<form action="/foods" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" required><br><br>
+
+    <label>Description:</label>
+    <input type="text" name="description" required><br><br>
+
+    <label>Calories:</label>
+    <input type="number" name="calories"><br><br>
+
+    <button type="submit">Add Food</button>
+</form>

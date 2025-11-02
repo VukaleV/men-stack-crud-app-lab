@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<h1>Edit Food</h1>
+
+<form action="/foods/<%= food._id %>?_method=PUT" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" value="<%= food.name %>" required><br><br>
+
+    <label>Description:</label>
+    <input type="text" name="description" value="<%= food.description %>" required><br><br>
+
+    <label>Calories:</label>
+    <input type="number" name="calories" value="<%= food.calories %>"><br><br>
+
+    <button type="submit">Update Food</button>
+</form>
